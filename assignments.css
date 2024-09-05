@@ -1,0 +1,103 @@
+/* Resetting default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+}
+
+/* Styling the body */
+body {
+    background-color: #000000;
+    color: white; /* Text color for visibility */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+}
+
+/* Styling the navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centering the navbar content */
+    background-image: url(./background.jpg);
+    z-index: 1000;
+    border-bottom: 3px solid #2c094c;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0; /* Removed extra left padding for proper centering */
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li:last-child {
+    margin-right: 0; /* No extra margin for the last item */
+}
+
+.navbar ul li a {
+    color: white; /* Changed to white for visibility */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px; /* Increased padding for better touch target */
+    display: inline-block; /* Needed for the transform property to work correctly */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for navbar links */
+.navbar ul li a:hover {
+    background-color: #ffffff;
+    border-radius: 5px; /* Added rounded corners on hover */
+    color: #2c094c;
+    transform: scale(1.1) translateY(-3px); /* Pop-up effect by scaling and moving upward */
+}
+
+/* Centering content on the page */
+.content {
+    display: flex; /* Added flex display */
+    align-items: center; /* Center content vertically */
+    justify-content: flex-start; /* Keep items aligned to the left */
+    width: 80%; /* Constrain width */
+    max-width: 1200px; /* Set a maximum width */
+    margin: 0 auto; /* Center horizontally */
+    position: relative; /* To allow absolute positioning within */
+}
+
+/* Centering content on the page */
+.content {
+    display: flex; /* Flex display */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    position: relative; /* To allow absolute positioning within */
+}
+
+/* Text Content Styling */
+.content-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align text */
+    justify-content: center; /* Center align text */
+    
+    padding: 40px; /* Added padding for spacing */
+    border-radius: 10px; /* Rounded corners */
+    color: #a9a9a9; /* Greyed-out text color */
+}
+
+/* Additional styles for the heading */
+.content-text h1 {
+    font-size: 3rem; /* Adjust to your desired size */
+    margin-bottom: 20px; /* Space below h1 */
+    text-align: center; /* Center-align text */
+}
