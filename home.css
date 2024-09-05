@@ -8,13 +8,13 @@
 /* Styling the body */
 body {
     background-color: #000000;
-    color: white; /* Added to improve text visibility */
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Added a fallback font */
-    display: flex; /* Added to make centering easier */
+    color: white; /* Text color for visibility */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    min-height: 100vh; /* Ensures the body takes full height */
-    margin: 0;
+    min-height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
 }
 
 /* Styling the navbar */
@@ -70,15 +70,16 @@ body {
     width: 80%; /* Constrain width */
     max-width: 1200px; /* Set a maximum width */
     margin: 0 auto; /* Center horizontally */
-    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 /* Circular Profile Picture with Hover Effect */
 .profile-pic {
-    width: 250px; /* Responsive width */
-    height: 250px; /* Responsive height */
+    width: 300px; /* Fixed width */
+    height: 300px; /* Fixed height */
     border-radius: 50%; /* Makes the div a circle */
-    margin: 20px; /* Added margin to provide spacing */
+    margin-right: 20px; /* Added margin to the right of the image */
+    margin-bottom: 20px; /* Add margin to the bottom for spacing */
     overflow: hidden; /* Hide overflow to maintain circle shape */
     border: 5px solid #2c094c; /* Optional border for better visibility */
     cursor: pointer; /* Changes the cursor to indicate interactivity */
@@ -124,9 +125,9 @@ body {
 .content-text {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin-top: 0; /* Reset top margin */
+    margin-left: 0; /* Reset left margin */
     flex-grow: 1; /* Allow content text to grow */
-    max-width: 600px; /* Max width for content text */
 }
 
 /* Additional styles for specific elements */
@@ -140,7 +141,11 @@ body {
     justify-content: flex-start; /* Align buttons to the left */
     margin-top: 20px; /* Space above the accounts section */
     gap: 10px; /* Space between the buttons */
-    flex-wrap: wrap; /* Wrap on smaller screens */
+}
+
+.fb {
+    width: -100px;
+    height: -px;
 }
 
 /* Styling the account buttons */
@@ -169,62 +174,26 @@ body {
     object-fit: cover; /* Maintain aspect ratio */
 }
 
-/* Media Queries for Responsiveness */
-
-/* For tablets and medium screens */
+/* Media Queries for responsiveness */
 @media (max-width: 768px) {
     .content {
-        flex-direction: column; /* Stack content vertically */
-        align-items: center; /* Center items */
-    }
-
-    .profile-pic {
-        width: 200px; /* Smaller width */
-        height: 200px; /* Smaller height */
-    }
-
-    .content-text {
-        margin: 20px 0; /* Adjust margin */
-        text-align: center; /* Center text for smaller screens */
-    }
-
-    .navbar ul {
-        flex-direction: column; /* Stack navbar items vertically */
-    }
-
-    .navbar ul li {
-        margin-bottom: 10px; /* Add spacing between navbar items */
-    }
-}
-
-/* For mobile screens */
-@media (max-width: 480px) {
-    .navbar {
-        height: auto; /* Adjust navbar height */
-        padding: 10px; /* Add padding */
-    }
-
-    .navbar ul {
-        flex-direction: column; /* Stack navbar items vertically */
+        flex-direction: column; /* Stack items vertically */
         align-items: center; /* Center-align items */
+        padding-bottom: 50px;
     }
-
-    .content-text {
-        margin: 10px; /* Reduce margin for smaller screens */
-        max-width: 90%; /* Reduce max-width */
-    }
-
+    
     .profile-pic {
-        width: 150px; /* Smaller width */
-        height: 150px; /* Smaller height */
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add margin below image */
+        margin-top: 100px;
+    }
+    
+    .content-text {
+        align-items: center; /* Center-align text */
+        margin-left: 0; /* Remove left margin */
     }
 
-    .accounts {
-        justify-content: center; /* Center-align account buttons */
-    }
-
-    .account-btn {
-        width: 50px; /* Adjust button size */
-        height: 50px; /* Adjust button size */
+    .intro {
+        text-align: center;
     }
 }
