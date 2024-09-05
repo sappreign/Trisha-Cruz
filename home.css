@@ -1,23 +1,20 @@
-/* Resetting default margin and padding for all elements */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+    box-sizing: border-box;
 }
 
-/* Styling the body */
 body {
     background-color: #000000;
-    color: white; /* Added to improve text visibility */
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Added a fallback font */
-    display: flex; /* Added to make centering easier */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    min-height: 100vh; /* Ensures the body takes full height */
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     margin: 0;
 }
 
-/* Styling the navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -26,7 +23,7 @@ body {
     height: 75px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centering the navbar content */
+    justify-content: center;
     background-image: url(./background.jpg);
     z-index: 1000;
     border-bottom: 3px solid #2c094c;
@@ -35,7 +32,7 @@ body {
 .navbar ul {
     list-style-type: none;
     display: flex;
-    padding-left: 0; /* Removed extra left padding for proper centering */
+    padding-left: 0;
 }
 
 .navbar ul li {
@@ -43,128 +40,116 @@ body {
 }
 
 .navbar ul li:last-child {
-    margin-right: 0; /* No extra margin for the last item */
+    margin-right: 0;
 }
 
 .navbar ul li a {
-    color: white; /* Changed to white for visibility */
-    text-decoration: none; /* Remove underline from links */
-    padding: 10px; /* Increased padding for better touch target */
-    display: inline-block; /* Needed for the transform property to work correctly */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hover effect for navbar links */
 .navbar ul li a:hover {
     background-color: #ffffff;
-    border-radius: 5px; /* Added rounded corners on hover */
+    border-radius: 5px;
     color: #2c094c;
-    transform: scale(1.1) translateY(-3px); /* Pop-up effect by scaling and moving upward */
+    transform: scale(1.1) translateY(-3px);
 }
 
-/* Centering content on the page */
 .content {
-    display: flex; /* Added flex display */
-    align-items: center; /* Center content vertically */
-    justify-content: flex-start; /* Keep items aligned to the left */
-    width: 80%; /* Constrain width */
-    max-width: 1200px; /* Set a maximum width */
-    margin: 0 auto; /* Center horizontally */
-    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
-/* Circular Profile Picture with Hover Effect */
 .profile-pic {
-    width: 250px; /* Responsive width */
-    height: 250px; /* Responsive height */
-    border-radius: 50%; /* Makes the div a circle */
-    margin: 20px; /* Added margin to provide spacing */
-    overflow: hidden; /* Hide overflow to maintain circle shape */
-    border: 5px solid #2c094c; /* Optional border for better visibility */
-    cursor: pointer; /* Changes the cursor to indicate interactivity */
-    position: relative; /* Needed to position the pseudo-element correctly */
-    flex-shrink: 0; /* Prevents the profile picture from shrinking */
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 20px;
+    overflow: hidden;
+    border: 5px solid #2c094c;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
 }
 
-/* Ensures the image fills the circle */
 .circle-image {
-    width: 100%; /* Ensure the image covers the div */
-    height: 100%; /* Ensure the image covers the div */
-    object-fit: cover; /* Maintain aspect ratio, cover the entire container */
-    transition: opacity 0.3s ease-in-out; /* Smooth transition for hover effect */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
 }
 
-/* Hover effect to change image using absolute positioning */
 .profile-pic:hover .circle-image {
-    opacity: 0; /* Fades out the original image */
+    opacity: 0;
 }
 
-/* New image on hover (pseudo-element) */
 .profile-pic::after {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url('./formal.jpg'); /* New image on hover */
-    background-size: cover; /* Ensure the image covers the div */
-    background-position: center; /* Center the background image */
-    border-radius: 50%; /* Maintain the circle shape */
+    background-image: url('./formal.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
     top: 0;
     left: 0;
-    opacity: 0; /* Start as invisible */
-    transition: opacity 0.3s ease-in-out; /* Smooth transition */
-    z-index: 1; /* Ensure it appears on top */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
 }
 
-/* Show the new image on hover */
 .profile-pic:hover::after {
-    opacity: 1; /* Fully visible */
+    opacity: 1;
 }
 
 .content-text {
     display: flex;
     flex-direction: column;
     margin: 20px;
-    flex-grow: 1; /* Allow content text to grow */
-    max-width: 600px; /* Max width for content text */
+    flex-grow: 1;
+    max-width: 600px;
 }
 
-/* Additional styles for specific elements */
 .cruz {
-    color: #561196; /* Changed color for emphasis */
+    color: #561196;
 }
 
-/* Styling the accounts section */
 .accounts {
-    display: flex; /* Flexbox for alignment */
-    justify-content: flex-start; /* Align buttons to the left */
-    margin-top: 20px; /* Space above the accounts section */
-    gap: 10px; /* Space between the buttons */
-    flex-wrap: wrap; /* Wrap on smaller screens */
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-/* Styling the account buttons */
 .account-btn {
-    background-color: #2c094c; /* Button background color */
-    border: none; /* Remove default button border */
-    border-radius: 50%; /* Make the button circular */
-    padding: 10px; /* Add some padding */
-    cursor: pointer; /* Show pointer on hover */
-    transition: transform 0.2s ease, background-color 0.2s ease; /* Add smooth transition */
-    display: inline-flex; /* Display as inline-flex for proper alignment */
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
+    background-color: #2c094c;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Button hover effect */
 .account-btn:hover {
-    background-color: #561196; /* Change background color on hover */
-    transform: scale(1.1); /* Slightly scale up on hover */
+    background-color: #561196;
+    transform: scale(1.1);
 }
 
-/* Styling the images inside buttons */
 .account-btn img {
-    width: 20px; /* Set a fixed width for icons */
-    height: 20px; /* Set a fixed height for icons */
-    object-fit: cover; /* Maintain aspect ratio */
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
 }
